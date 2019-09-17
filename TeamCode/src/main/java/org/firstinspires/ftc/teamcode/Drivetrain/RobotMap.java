@@ -10,12 +10,16 @@ import java.io.File;
  * Maps out the Motors,Sensors Vars and FilePaths to be used in Robot OP_Modes
  */
 public class RobotMap {
-
+    // Drive Train Motors
     public static DcMotor BackR;
     public static DcMotor BackL;
     public static DcMotor FrontR;
     public static DcMotor FrontL;
 
+    // Intake Motor
+    public static DcMotor Intake;
+
+    // Sensor inputs 
     public static BNO055IMU imu;
     public static DigitalChannel button;
 

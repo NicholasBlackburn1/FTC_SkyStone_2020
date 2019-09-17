@@ -9,12 +9,11 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 
 import java.util.Arrays;
-/*
-* Configures Drive Train / other Motor Functions
-* To be called from Different OpModes
-*
-* */
 
+/**
+ * Init's and Sets each Drive train motors brake mode and control mode
+ *
+ */
 
 public  class DriveTrain extends OpMode{
 

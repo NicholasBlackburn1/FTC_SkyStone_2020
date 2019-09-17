@@ -10,6 +10,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
+/**
+ * Init's and Reads Data form the Integrated  Rev Imu
+ */
 public class ImuMapper extends OpMode {
 
     public static Orientation angles;
