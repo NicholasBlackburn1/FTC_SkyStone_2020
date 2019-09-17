@@ -18,39 +18,7 @@ import java.util.Arrays;
 
 public  class DriveTrain extends OpMode{
 
-    public void Init(){
 
-        // enbles imu to be programend in code
-        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
-
-        // Defines Robot Drive motors in Java
-
-        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
-
-        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
-        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
-
-        RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
-        RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);
-
-        RobotMap.FrontL.setDirection(DcMotorSimple.Direction.REVERSE);
-        RobotMap.BackR.setDirection(DcMotorSimple.Direction.FORWARD);
-
-        // Sets Zero Power Action for Drive Motor
-        RobotMap.FrontR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // Set to Brake mode
-        RobotMap.FrontL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
-
-        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
-        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-    }
 
     public void Motor_control(){
         RobotMap.FrontL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Front set of wheels
@@ -112,6 +80,36 @@ public  class DriveTrain extends OpMode{
     }
 
     public void init() {
+
+        // enbles imu to be programend in code
+        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
+
+        // Defines Robot Drive motors in Java
+
+        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+
+        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
+        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+
+        RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
+        RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        RobotMap.FrontL.setDirection(DcMotorSimple.Direction.REVERSE);
+        RobotMap.BackR.setDirection(DcMotorSimple.Direction.FORWARD);
+
+        // Sets Zero Power Action for Drive Motor
+        RobotMap.FrontR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // Set to Brake mode
+        RobotMap.FrontL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
     }
 
