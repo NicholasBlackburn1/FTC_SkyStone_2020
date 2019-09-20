@@ -7,6 +7,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.robot.Robot;
+
+import org.firstinspires.ftc.ftccommon.internal.RunOnBoot;
 
 import java.util.Arrays;
 
@@ -17,6 +20,62 @@ import java.util.Arrays;
 
 public  class DriveTrain extends OpMode{
 
+    public void Auto_Stop(){
+
+        MotorPower(0);
+        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+    }
+
+    public void init_Auto() {
+
+        RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+
+    }
+
+    public void AutoLOOP(){
+
+
+        telemetry.addData("Path0",  "Starting at %7d :%7d",
+
+                // reads encoder value and Prints it to Driver station
+                RobotMap.BackL.getCurrentPosition(),
+                RobotMap.BackR.getCurrentPosition(),
+                RobotMap.FrontR.getCurrentPosition(),
+                RobotMap.FrontL.getCurrentPosition());
+
+        telemetry.update();
+
+
+    }
+
+    public void EncoderRun(int Pos){
+
+        // sets Motor's target ticks
+
+        RobotMap.BackR.setTargetPosition(Pos);
+        RobotMap.BackL.setTargetPosition(Pos);
+        RobotMap.FrontL.setTargetPosition(Pos);
+        RobotMap.FrontR.setTargetPosition(Pos);
+    }
+
+    public void MotorPower(int Power){
+
+        // sets motor power
+        RobotMap.BackR.setPower(Power);
+        RobotMap.BackL.setPower(Power);
+        RobotMap.FrontL.setPower(Power);
+        RobotMap.FrontR.setPower(Power);
+
+    }
 
 
     public void Motor_control(){
@@ -78,8 +137,13 @@ public  class DriveTrain extends OpMode{
 
     }
 
-    public void init() {
 
+    public void init() {
+        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+
+        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
+        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
 
         RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
         RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -99,8 +163,11 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        telemetry.addData("Status", "Resetting Encoders");    //
+        telemetry.update();
 
     }
+
 
 
     public void loop() {
