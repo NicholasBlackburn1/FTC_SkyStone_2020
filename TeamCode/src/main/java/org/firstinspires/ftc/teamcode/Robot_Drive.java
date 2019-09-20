@@ -16,13 +16,17 @@ public class Robot_Drive extends OpMode {
     public void init() {
 
         oi.init();
+
         Imu.init();
+
         driveTrain.init();
     }
 
     @Override
     public void loop() {
+
         driveTrain.Motor_control();
+
         Imu.ImuData();
 
     }
