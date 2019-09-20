@@ -142,6 +142,17 @@ public  class DriveTrain extends OpMode{
         RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
         RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
 
+<<<<<<< HEAD
+=======
+        // enbles imu to be programend in code
+        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
+
+        // Defines Robot Drive motors in Java
+
+        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+
+>>>>>>> parent of 3b45867... added Robot_OI and new Robot Functondrive
         RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
         RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
 

@@ -98,7 +98,10 @@
     <orderEntry type="module" module-name="FtcRobotController" />
     <orderEntry type="module" module-name="FtcRobotController" />
     <orderEntry type="module" module-name="FtcRobotController" />
+<<<<<<< HEAD
     <orderEntry type="module" module-name="FtcRobotController" />
     <orderEntry type="module" module-name="FtcRobotController" />
+=======
+>>>>>>> parent of 3b45867... added Robot_OI and new Robot Functondrive
   </component>
 </module>
