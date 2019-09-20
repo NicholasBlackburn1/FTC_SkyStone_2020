@@ -1,0 +1,4 @@
+#Fri Sep 20 13:59:45 EDT 2019
+base.0=/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex
