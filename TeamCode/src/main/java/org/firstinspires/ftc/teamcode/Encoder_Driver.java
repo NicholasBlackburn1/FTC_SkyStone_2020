@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
@@ -10,10 +11,11 @@ import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
 public class Encoder_Driver extends OpMode {
 
      private DriveTrain drive = new DriveTrain();
-
-
     @Override
     public void init() {
+
+        // starts auto timer
+
 
         // init main motor config
         drive.init();
@@ -21,9 +23,10 @@ public class Encoder_Driver extends OpMode {
         // init motors for Auto
         drive.init_Auto();
     }
-
+    
     @Override
     public void loop() {
+
 
         drive.EncoderRun(1120);
 
