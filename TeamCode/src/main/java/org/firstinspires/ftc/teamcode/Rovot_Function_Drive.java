@@ -12,7 +12,7 @@ public class Rovot_Function_Drive extends OpMode {
 
     @Override
     public void init() {
-
+        oi.init();
         driveTrain.init();
     }
 
