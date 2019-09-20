@@ -2,20 +2,16 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
-import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
 
 @Autonomous(name = "Sample_Encoder",group = "Auto")
 public class Encoder_Driver extends OpMode {
 
      private DriveTrain drive = new DriveTrain();
+
     @Override
     public void init() {
-
-        // starts auto timer
-
 
         // init main motor config
         drive.init();
