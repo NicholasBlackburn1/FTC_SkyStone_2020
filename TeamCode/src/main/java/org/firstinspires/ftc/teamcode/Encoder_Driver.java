@@ -23,7 +23,7 @@ public class Encoder_Driver extends OpMode {
         // init motors for Auto
         drive.init_Auto();
     }
-    
+
     @Override
     public void loop() {
 
