@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Sep 20 13:59:46 EDT 2019
+#Sun Sep 22 15:05:32 EDT 2019
 20.base=/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/merged_assets/debug/out
 143.base=/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/merged_assets/debug/out
 237.path=java/js/ace.js
