@@ -123,11 +123,14 @@ public  class DriveTrain extends OpMode{
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-    public void Strafe_active(){
+    public void Strafe_active(Telemetry telemetry){
 
-        if(gamepad1.a == true){
+        if(gamepad1.a = true){
+
             Motor_Strafe_Control();
 
+            telemetry.addData("Strafe", "Active");
+            telemetry.update();
         }
 
     }
