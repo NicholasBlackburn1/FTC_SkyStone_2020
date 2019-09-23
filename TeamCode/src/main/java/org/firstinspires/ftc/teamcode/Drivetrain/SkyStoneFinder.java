@@ -13,6 +13,7 @@ import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 import java.util.List;
 
 import static org.firstinspires.ftc.robotcore.external.tfod.TfodSkyStone.TFOD_MODEL_ASSET;
+import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.LABEL_FIRST_ELEMENT;
 import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.VUFORIA_KEY;
 import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.tfod;
 
@@ -41,7 +42,7 @@ public class SkyStoneFinder extends OpMode {
         tfodParameters.minimumConfidence = 0.8;
 
         tfod = ClassFactory.getInstance().createTFObjectDetector(tfodParameters, robotMap.vuforia);
-        tfod.loadModelFromAsset(robotMap.TFOD_MODEL_ASSET, robotMap.LABEL_FIRST_ELEMENT,  robotMap.LABEL_SECOND_ELEMENT);
+        tfod.loadModelFromAsset(robotMap.TFOD_MODEL_ASSET, LABEL_FIRST_ELEMENT,  robotMap.LABEL_SECOND_ELEMENT);
         }
 
     public void Skystonefinder_INIT(HardwareMap hardwareMap){
@@ -73,6 +74,10 @@ public class SkyStoneFinder extends OpMode {
                                     recognition.getLeft(), recognition.getTop());
                             telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
                                     recognition.getRight(), recognition.getBottom());
+
+                            if (recognition.getLabel().equals(LABEL_FIRST_ELEMENT)){
+                                telemetry.addData("SEEEEEEEESSSSSSSSSS","adddd");
+                            }
                         }
                         telemetry.update();
 
