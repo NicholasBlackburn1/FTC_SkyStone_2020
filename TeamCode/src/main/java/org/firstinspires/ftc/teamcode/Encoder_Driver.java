@@ -40,7 +40,7 @@ public class Encoder_Driver extends OpMode {
 
 
         if (RobotMap.BackR .getCurrentPosition() == 1120){
-            drive.Spin_auto();
+            drive.Auto_Stop();
         }
     }
 
