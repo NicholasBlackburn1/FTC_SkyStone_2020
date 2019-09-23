@@ -18,8 +18,6 @@ public class Encoder_Driver extends OpMode {
 
         // init main motor config
         drive.Hardwareinit(hardwareMap);
-        drive.init();
-
         // init motors for Auto
         drive.init_Auto();
 

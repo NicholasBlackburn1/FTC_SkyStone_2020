@@ -24,6 +24,7 @@ public  class DriveTrain extends OpMode{
 
     public int Pos = 1120;
     public int turn = 1120*2;
+
     public void Auto_Stop(){
 
         MotorPower(0);
@@ -36,6 +37,14 @@ public  class DriveTrain extends OpMode{
     }
 
     public void init_Auto() {
+        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        telemetry.addData("Status", "Resetting Encoders");    //
+        telemetry.update();
+
         RobotMap.BackR.setTargetPosition(Pos);
         RobotMap.BackL.setTargetPosition(Pos);
         RobotMap.FrontL.setTargetPosition(Pos);
@@ -48,29 +57,6 @@ public  class DriveTrain extends OpMode{
         RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
 
-
-    }
-    public void Spin_auto(){
-
-
-        RobotMap.BackL.setTargetPosition(turn);
-        RobotMap.FrontL.setTargetPosition(turn);
-
-        RobotMap.BackR.setTargetPosition(turn);
-        RobotMap.FrontR.setTargetPosition(turn);
-
-        RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
-
-        RobotMap.FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);// Front Drive Motors
-        RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        RobotMap.BackR.setPower(1);
-        RobotMap.FrontR.setPower(1);
-
-
-        RobotMap.BackL.setPower(-1);
-        RobotMap.FrontL.setPower(-1);
 
     }
 
@@ -183,13 +169,6 @@ public  class DriveTrain extends OpMode{
 
     @Override
     public void init() {
-        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
-
-        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
-        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        telemetry.addData("Status", "Resetting Encoders");    //
-        telemetry.update();
 
     }
     @Override
