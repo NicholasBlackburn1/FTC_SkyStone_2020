@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.robot.Robot;
 
@@ -23,7 +24,7 @@ import java.util.Arrays;
 public  class DriveTrain extends OpMode{
 
     public int Pos = 1120;
-    public int turn = 1120*2;
+    public int turn = 1120*4;
 
     public void Auto_Stop(){
 
@@ -34,6 +35,33 @@ public  class DriveTrain extends OpMode{
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
+    }
+    public void Auto_Turn(){
+
+        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        telemetry.addData("Status", "Resetting Encoders");    //
+        telemetry.update();
+
+        // Sets turn Target pos
+        RobotMap.BackR.setTargetPosition(turn);
+        RobotMap.BackL.setTargetPosition(0);
+        RobotMap.FrontL.setTargetPosition(0);
+        RobotMap.FrontR.setTargetPosition(turn);
+
+        RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
+
+        RobotMap.FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);// Front Drive Motors
+        RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        RobotMap.BackR.setPower(1);
+        RobotMap.BackL.setPower(0);
+        RobotMap.FrontL.setPower(0);
+        RobotMap.FrontR.setPower(1);
     }
 
     public void init_Auto() {
@@ -73,7 +101,7 @@ public  class DriveTrain extends OpMode{
     }
 
 
-    public void Motor_control(){
+    public void Motor_control(Gamepad gamepad1){
         RobotMap.FrontL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Front set of wheels
         RobotMap.FrontR.setPower(gamepad1.left_stick_y + gamepad1.right_stick_x);
 

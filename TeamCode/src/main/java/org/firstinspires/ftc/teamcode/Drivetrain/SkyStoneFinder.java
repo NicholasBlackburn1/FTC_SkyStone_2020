@@ -75,9 +75,6 @@ public class SkyStoneFinder extends OpMode {
                             telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
                                     recognition.getRight(), recognition.getBottom());
 
-                            if (recognition.getLabel().equals(LABEL_FIRST_ELEMENT)){
-                                telemetry.addData("SEEEEEEEESSSSSSSSSS","adddd");
-                            }
                         }
                         telemetry.update();
 

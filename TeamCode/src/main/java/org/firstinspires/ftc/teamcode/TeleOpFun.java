@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
 
@@ -21,9 +22,9 @@ public class TeleOpFun extends OpMode {
     @Override
     public void loop() {
 
-        driveTrain.Motor_control();
+        driveTrain.Motor_control(gamepad1);
 
-        driveTrain.Strafe_active(telemetry);
+        //driveTrain.Strafe_active(telemetry);
 
         }
     }

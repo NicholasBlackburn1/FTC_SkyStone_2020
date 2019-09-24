@@ -37,8 +37,10 @@ public class Encoder_Driver extends OpMode {
 
 
 
+
         if (RobotMap.BackR .getCurrentPosition() == 1120){
-            drive.Auto_Stop();
+
+            drive.Auto_Turn();
         }
     }
 

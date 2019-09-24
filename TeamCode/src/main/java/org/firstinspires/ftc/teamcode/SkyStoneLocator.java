@@ -3,12 +3,12 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.Drivetrain.SkyStoneFinder;
+import org.firstinspires.ftc.teamcode.Drivetrain.*;
 
 @TeleOp(name = "Tensorflow skystone rec",group = "TeleOP")
 public class SkyStoneLocator extends OpMode {
 
-     SkyStoneFinder stoneFinder = new SkyStoneFinder();
+    SkyStoneFinder stoneFinder = new SkyStoneFinder();
 
     @Override
     public void init() {
@@ -26,6 +26,7 @@ public class SkyStoneLocator extends OpMode {
     }
     @Override
     public void stop(){
+        
         stoneFinder.stop();
     }
 }

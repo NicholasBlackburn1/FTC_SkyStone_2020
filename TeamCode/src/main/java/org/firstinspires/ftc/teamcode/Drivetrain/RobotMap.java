@@ -23,7 +23,7 @@ public class RobotMap {
     public static DcMotor FrontR;
     public static DcMotor FrontL;
 
-    
+
     // Intake Motor
     public static DcMotor Intake;
 
