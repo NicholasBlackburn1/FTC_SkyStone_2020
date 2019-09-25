@@ -38,29 +38,6 @@ public  class DriveTrain extends OpMode{
     }
     public void Auto_Turn(){
 
-        RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
-
-        RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
-        RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-
-        // Sets turn Target pos
-        RobotMap.BackR.setTargetPosition(turn);
-        RobotMap.BackL.setTargetPosition(0);
-        RobotMap.FrontL.setTargetPosition(0);
-        RobotMap.FrontR.setTargetPosition(turn);
-
-        RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
-
-        RobotMap.FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);// Front Drive Motors
-        RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        RobotMap.BackR.setPower(1);
-        RobotMap.BackL.setPower(0);
-        RobotMap.FrontL.setPower(0);
-        RobotMap.FrontR.setPower(1);
     }
 
     public void init_Auto() {

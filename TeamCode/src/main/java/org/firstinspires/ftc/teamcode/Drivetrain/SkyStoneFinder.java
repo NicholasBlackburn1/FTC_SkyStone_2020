@@ -97,6 +97,7 @@ public class SkyStoneFinder extends OpMode {
     }
     @Override
     public void stop(){
+
         tfod.deactivate();
     }
 }

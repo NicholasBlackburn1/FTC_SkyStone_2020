@@ -11,6 +11,7 @@ import org.firstinspires.ftc.teamcode.Drivetrain.*;
 @Autonomous(name = "Sample_Encoder",group = "Auto")
 public class Encoder_Driver extends OpMode {
 
+    int turn = 1120 *4;
     private DriveTrain drive = new DriveTrain();
 
     @Override
@@ -40,7 +41,30 @@ public class Encoder_Driver extends OpMode {
 
         if (RobotMap.BackR .getCurrentPosition() == 1120){
 
-            drive.Auto_Turn();
+
+            RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
+
+            RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
+            RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+
+            // Sets turn Target pos
+            RobotMap.BackR.setTargetPosition(turn);
+            RobotMap.BackL.setTargetPosition(0);
+            RobotMap.FrontL.setTargetPosition(0);
+            RobotMap.FrontR.setTargetPosition(turn);
+
+            RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
+
+            RobotMap.FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);// Front Drive Motors
+            RobotMap.FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            RobotMap.BackR.setPower(1);
+            RobotMap.BackL.setPower(0);
+            RobotMap.FrontL.setPower(0);
+            RobotMap.FrontR.setPower(1);
         }
     }
 
