@@ -59,6 +59,7 @@ public class SkyStoneFinder extends OpMode {
     public void SkyStone_RUN(Telemetry telemetry){
 
 
+
                 if (tfod != null) {
                     tfod.activate();
                     // getUpdatedRecognitions() will return null if no new information is available since
@@ -75,6 +76,10 @@ public class SkyStoneFinder extends OpMode {
                             telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
                                     recognition.getRight(), recognition.getBottom());
 
+                            // Prints out (X,Y) Calulated by X2-X1 and Y2-Y1 to find center of images
+
+                            telemetry.addData("delta x",recognition.getRight() - recognition.getLeft());
+                            telemetry.addData("delta Y",recognition.getTop() - recognition.getBottom());
                         }
                         telemetry.update();
 

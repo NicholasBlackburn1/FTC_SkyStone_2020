@@ -43,8 +43,7 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        telemetry.addData("Status", "Resetting Encoders");    //
-        telemetry.update();
+
 
         // Sets turn Target pos
         RobotMap.BackR.setTargetPosition(turn);
