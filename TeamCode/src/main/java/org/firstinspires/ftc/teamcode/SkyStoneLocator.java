@@ -9,12 +9,14 @@ import org.firstinspires.ftc.teamcode.Drivetrain.*;
 public class SkyStoneLocator extends OpMode {
 
     SkyStoneFinder stoneFinder = new SkyStoneFinder();
+    DriveTrain drive = new DriveTrain();
 
     @Override
     public void init() {
         // Inits vuforia and tenserfo
         stoneFinder.Skystonefinder_INIT(hardwareMap);
 
+        drive.Hardwareinit(hardwareMap);
 
     }
 
@@ -22,6 +24,7 @@ public class SkyStoneLocator extends OpMode {
     public void loop() {
 
         stoneFinder.SkyStone_RUN(telemetry);
+
 
     }
     @Override
