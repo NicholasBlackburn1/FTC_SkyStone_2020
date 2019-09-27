@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 public  class DriveTrain extends OpMode{
 
-    public int Pos = 1120;
+    public int Pos = 1120*5;
     public int turn = 1120*2;
 
     public void Auto_Stop(){

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "C:\\Users\\jfeczko\\Documents\\GitHub\\FTC_SkyStone_2020\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/FtcRobotController/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml",
+                    "source": "C:\\Users\\jfeczko\\Documents\\GitHub\\FTC_SkyStone_2020\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
