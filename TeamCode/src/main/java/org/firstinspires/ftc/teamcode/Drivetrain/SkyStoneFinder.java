@@ -19,6 +19,7 @@ import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.tfod;
 
 public class SkyStoneFinder extends OpMode {
 
+
     RobotMap robotMap = new RobotMap();
 
     public void initVuforia() {
@@ -59,6 +60,7 @@ public class SkyStoneFinder extends OpMode {
     public void SkyStone_RUN(Telemetry telemetry){
 
 
+
                 if (tfod != null) {
                     tfod.activate();
                     // getUpdatedRecognitions() will return null if no new information is available since
@@ -70,14 +72,24 @@ public class SkyStoneFinder extends OpMode {
                         int i = 0;
                         for (Recognition recognition : updatedRecognitions) {
                             telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                            telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                    recognition.getLeft(), recognition.getTop());
-                            telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                    recognition.getRight(), recognition.getBottom());
 
-                            if (recognition.getLabel().equals(LABEL_FIRST_ELEMENT)){
-                                telemetry.addData("SEEEEEEEESSSSSSSSSS","adddd");
+                            // Prints out (X,Y) Calulated by X2-X1 and Y2-Y1 to find center of images
+                            float X = (recognition.getRight() - recognition.getLeft());
+                            float Y = (recognition.getTop() - recognition.getBottom());
+                            float Center = X-Y;
+
+                            telemetry.addData("delta x",X/2);
+                            telemetry.addData("delta Y",Y/2);
+                            telemetry.addData("center",Center);
+
+                            while (Center >  2310.08){
+                                telemetry.addData("am i there","there?");
+                                    break;
+                                }
+                            if (Center < 2310.08){
+                                telemetry.addData("am i there","1");
                             }
+
                         }
                         telemetry.update();
 
@@ -95,6 +107,7 @@ public class SkyStoneFinder extends OpMode {
     }
     @Override
     public void stop(){
+
         tfod.deactivate();
     }
 }

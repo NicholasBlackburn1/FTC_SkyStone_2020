@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.robot.Robot;
 
@@ -22,8 +23,13 @@ import java.util.Arrays;
 
 public  class DriveTrain extends OpMode{
 
+<<<<<<< HEAD
     public int Pos = 1120*5;
     public int turn = 1120*2;
+=======
+    public int Pos = 1120;
+    public int turn = 1120*4;
+>>>>>>> 3f7532bfe5531cb23f078c1f8f50a2337756ee87
 
     public void Auto_Stop(){
 
@@ -33,6 +39,9 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+    }
+    public void Auto_Turn(){
 
     }
 
@@ -73,7 +82,7 @@ public  class DriveTrain extends OpMode{
     }
 
 
-    public void Motor_control(){
+    public void Motor_control(Gamepad gamepad1){
         RobotMap.FrontL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Front set of wheels
         RobotMap.FrontR.setPower(gamepad1.left_stick_y + gamepad1.right_stick_x);
 
