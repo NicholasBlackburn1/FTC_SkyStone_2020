@@ -19,7 +19,7 @@ import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.tfod;
 
 public class SkyStoneFinder extends OpMode {
 
-
+    DriveTrain driveTrain = new DriveTrain();
     RobotMap robotMap = new RobotMap();
 
     public void initVuforia() {
@@ -74,7 +74,7 @@ public class SkyStoneFinder extends OpMode {
                             telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
 
                             // Prints out (X,Y) Calulated by X2-X1 and Y2-Y1 to find center of images
-                            float X = (recognition.getRight() - recognition.getLeft());
+                            float X = (recognition.getRight() - recognition.getLeft()/2 + recognition.getLeft());
                             float Y = (recognition.getTop() - recognition.getBottom());
                             float Center = X-Y;
 
@@ -84,10 +84,13 @@ public class SkyStoneFinder extends OpMode {
 
                             while (Center >  2310.08){
                                 telemetry.addData("am i there","there?");
+                                    driveTrain.MotorPower(0);
                                     break;
                                 }
-                            if (Center < 2310.08){
+                            while (Center < 2000.08){
                                 telemetry.addData("am i there","1");
+                                driveTrain.MotorPower(-1);
+                                break;
                             }
 
                         }
