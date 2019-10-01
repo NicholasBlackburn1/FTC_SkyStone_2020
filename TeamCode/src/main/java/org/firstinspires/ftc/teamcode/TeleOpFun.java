@@ -17,6 +17,7 @@ public class TeleOpFun extends OpMode {
         driveTrain.Hardwareinit(hardwareMap);
 
 
+
     }
 
     @Override
@@ -24,7 +25,5 @@ public class TeleOpFun extends OpMode {
 
         driveTrain.Motor_control(gamepad1);
 
-        //driveTrain.Strafe_active(telemetry);
 
-        }
     }

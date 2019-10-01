@@ -23,9 +23,6 @@ import java.util.Arrays;
 
 public  class DriveTrain extends OpMode{
 
-    public int Pos = 1120;
-    public int turn = 1120*4;
-
     public void Auto_Stop(){
 
         MotorPower(0);
@@ -36,11 +33,20 @@ public  class DriveTrain extends OpMode{
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
     }
-    public void Auto_Turn(){
+
+    public void Auto_Turn(int Pos,int Pos2,Telemetry telemetry ){
+
+
+        RobotMap.BackR.setTargetPosition(Pos2);
+        RobotMap.BackL.setTargetPosition(Pos);
+        RobotMap.FrontL.setTargetPosition(Pos);
+        RobotMap.FrontR.setTargetPosition(Pos2);
+
+
 
     }
 
-    public void init_Auto() {
+    public void init_Auto(int Pos,Telemetry telemetry) {
         RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
 

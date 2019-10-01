@@ -84,12 +84,10 @@ public class SkyStoneFinder extends OpMode {
 
                             while (Center >  2310.08){
                                 telemetry.addData("am i there","there?");
-                                    driveTrain.MotorPower(0);
                                     break;
                                 }
                             while (Center < 2000.08){
                                 telemetry.addData("am i there","1");
-                                driveTrain.MotorPower(-1);
                                 break;
                             }
 
