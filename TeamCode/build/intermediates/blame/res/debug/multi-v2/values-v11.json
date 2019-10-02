@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\jfeczko\\Documents\\GitHub\\FTC_SkyStone_2020\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/home/nickthehacker/.gradle/caches/transforms-2/files-2.1/561e8beb4d3a245d0c27a1e4e756d933/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\jfeczko\\.gradle\\caches\\transforms-2\\files-2.1\\83d34e35c8ae9cf2aede0eb50dd44688\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

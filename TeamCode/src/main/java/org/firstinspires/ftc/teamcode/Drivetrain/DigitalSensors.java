@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.Drivetrain;
 
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 
-public class DigitalSensors {
+public class DigitalSensors  {
 
     public static void Init(){
 

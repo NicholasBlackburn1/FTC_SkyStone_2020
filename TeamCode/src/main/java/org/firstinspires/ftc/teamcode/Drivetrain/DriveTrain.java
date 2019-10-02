@@ -153,6 +153,8 @@ public  class DriveTrain extends OpMode{
         // enbles imu to be programend in code
         RobotMap. imu = hardwareMap.get(BNO055IMU.class, "imu");
 
+        RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
+
         // Defines Robot Drive motors in Java
 
         RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
