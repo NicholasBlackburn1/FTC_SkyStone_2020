@@ -23,6 +23,7 @@ public class RobotMap {
     public static DcMotor BackL;
     public static DcMotor FrontR;
     public static DcMotor FrontL;
+    public static DcMotor Arm;
 
     // Servo Motors
     public static Servo Servo1;

@@ -6,7 +6,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
 import org.firstinspires.ftc.teamcode.Drivetrain.Logger_ftc;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
@@ -20,12 +19,12 @@ public class TeleOpFun extends OpMode {
 
     DriveTrain driveTrain = new DriveTrain();
     RobotSpeak robotSpeak = new RobotSpeak();
-    Logger_ftc logger_ftc = new Logger_ftc();
 
 
     @Override
     public void init() {
         // Init's all drive train hardware
+
         driveTrain.Hardwareinit(hardwareMap);
         robotSpeak.Speak_Init();
     }
@@ -38,6 +37,7 @@ public class TeleOpFun extends OpMode {
         // Enables you to strafe while button a on gampad1 is held down
         driveTrain.Strafe_active(gamepad1,telemetry);
 
+        driveTrain.Arm(gamepad1);
 
         if(RobotMap.button.getState() == true){
 

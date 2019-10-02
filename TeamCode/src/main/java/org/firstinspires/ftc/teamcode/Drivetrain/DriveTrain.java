@@ -42,6 +42,10 @@ public  class DriveTrain extends OpMode{
         logger.Log.info("Auto stopped Successful");
 
     }
+    public void Arm(Gamepad gamepad1){
+        RobotMap.Arm.setPower(gamepad1.right_trigger);
+        RobotMap.Arm.setPower(-gamepad1.left_trigger);
+    }
 
     public void init_Auto(int Pos, Telemetry telemetry) {
 
@@ -146,7 +150,6 @@ public  class DriveTrain extends OpMode{
 
     public void Hardwareinit(HardwareMap hardwareMap) {
 
-       try {
            RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
 
            RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
@@ -159,14 +162,12 @@ public  class DriveTrain extends OpMode{
 
            RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
            RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+           RobotMap.Arm = hardwareMap.dcMotor.get("Arm");
 
 
            RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
            RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
-       }
-       catch(A){
 
-       }
 
         RobotMap.Servo1.setDirection(Servo.Direction.FORWARD);
 
