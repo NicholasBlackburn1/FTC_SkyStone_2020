@@ -155,6 +155,7 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
 
+        RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
         // Defines Robot Drive motors in Java
 
         RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
