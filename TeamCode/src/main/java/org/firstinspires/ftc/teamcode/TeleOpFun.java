@@ -19,6 +19,7 @@ public class TeleOpFun extends OpMode {
 
     DriveTrain driveTrain = new DriveTrain();
     RobotSpeak robotSpeak = new RobotSpeak();
+    Logger_ftc logger_ftc = new Logger_ftc();
 
 
     @Override
@@ -26,7 +27,12 @@ public class TeleOpFun extends OpMode {
         // Init's all drive train hardware
 
         driveTrain.Hardwareinit(hardwareMap);
+
+        logger_ftc.Logger_init();
+
         robotSpeak.Speak_Init();
+
+        logger_ftc.Log.severe("TELEOP INIT");
     }
 
     @Override

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jfeczko\\Documents\\GitHub\\FTC_SkyStone_2020\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
+            "outputFile": "/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jfeczko\\.gradle\\caches\\transforms-2\\files-2.1\\bfeb2111caa393a2730b5fdfae3b67d4\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "source": "/home/nickthehacker/.gradle/caches/transforms-2/files-2.1/23d64699ede2d7f7e479a40e4a9e0527/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
