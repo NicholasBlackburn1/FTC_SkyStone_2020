@@ -7,8 +7,12 @@ import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 public class Pid_Controller extends OpMode {
 
     PIDFCoefficients pidCoefficients = new PIDFCoefficients();
-    
+
     public void PID_input(){
+    pidCoefficients.p = 0;
+    pidCoefficients.i = 0;
+    pidCoefficients.d = 0;
+    pidCoefficients.f = 0;
 
 
     }

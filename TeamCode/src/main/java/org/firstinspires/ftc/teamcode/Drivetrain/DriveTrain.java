@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Drivetrain;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.exception.RobotCoreException;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 
@@ -14,8 +15,11 @@ import com.qualcomm.robotcore.robot.Robot;
 
 import org.firstinspires.ftc.ftccommon.internal.RunOnBoot;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.internal.usb.exception.RobotUsbDeviceClosedException;
+import org.firstinspires.ftc.robotcore.internal.usb.exception.RobotUsbException;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Init's and Sets each Drive train motors brake mode and control mode
@@ -23,6 +27,9 @@ import java.util.Arrays;
  */
 
 public  class DriveTrain extends OpMode{
+
+
+    Logger_ftc logger =  new Logger_ftc();
 
     public void Auto_Stop(){
 
@@ -32,10 +39,12 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        logger.Log.info("Auto stopped Successful");
 
     }
 
-    public void init_Auto(int Pos,Telemetry telemetry) {
+    public void init_Auto(int Pos, Telemetry telemetry) {
+
         RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
 
@@ -44,10 +53,10 @@ public  class DriveTrain extends OpMode{
         telemetry.addData("Status", "Resetting Encoders");    //
         telemetry.update();
 
-        RobotMap.BackR.setTargetPosition(Pos);
-        RobotMap.BackL.setTargetPosition(Pos);
-        RobotMap.FrontL.setTargetPosition(Pos);
-        RobotMap.FrontR.setTargetPosition(Pos);
+            RobotMap.BackR.setTargetPosition(Pos);
+            RobotMap.BackL.setTargetPosition(Pos);
+            RobotMap.FrontL.setTargetPosition(Pos);
+            RobotMap.FrontR.setTargetPosition(Pos);
 
         RobotMap.BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         RobotMap.BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION); // Back Drive Motors
@@ -137,25 +146,27 @@ public  class DriveTrain extends OpMode{
 
     public void Hardwareinit(HardwareMap hardwareMap) {
 
-        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+       try {
+           RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
 
-        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
+           RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
 
-        RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
+           RobotMap.Servo1 = hardwareMap.get(Servo.class,"Servo1");
+           // enbles imu to be programend in code
 
-        RobotMap.Servo1 = hardwareMap.get(Servo.class,"Servo1");
-        // enbles imu to be programend in code
+           RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
+           // Defines Robot Drive motors in Java
 
-        RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
-        // Defines Robot Drive motors in Java
-
-        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+           RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
+           RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
 
 
-        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
-        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+           RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
+           RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+       }
+       catch(A){
+
+       }
 
         RobotMap.Servo1.setDirection(Servo.Direction.FORWARD);
 
