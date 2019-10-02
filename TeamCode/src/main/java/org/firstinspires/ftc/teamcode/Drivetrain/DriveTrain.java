@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.robot.Robot;
 
 import org.firstinspires.ftc.ftccommon.internal.RunOnBoot;
@@ -31,18 +32,6 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-    }
-
-    public void Auto_Turn(int Pos,int Pos2,Telemetry telemetry ){
-
-
-        RobotMap.BackR.setTargetPosition(Pos2);
-        RobotMap.BackL.setTargetPosition(Pos);
-        RobotMap.FrontL.setTargetPosition(Pos);
-        RobotMap.FrontR.setTargetPosition(Pos2);
-
-
 
     }
 
@@ -133,7 +122,7 @@ public  class DriveTrain extends OpMode{
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-    public void Strafe_active(Telemetry telemetry){
+    public void Strafe_active( Gamepad gamepad1,Telemetry telemetry){
 
         if(gamepad1.a = true){
 
@@ -149,21 +138,26 @@ public  class DriveTrain extends OpMode{
     public void Hardwareinit(HardwareMap hardwareMap) {
 
         RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap. BackR = hardwareMap.dcMotor.get("BackR");
-        // enbles imu to be programend in code
-        RobotMap. imu = hardwareMap.get(BNO055IMU.class, "imu");
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+
+        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
 
         RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
+
+        RobotMap.Servo1 = hardwareMap.get(Servo.class,"Servo1");
+        // enbles imu to be programend in code
 
         RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
         // Defines Robot Drive motors in Java
 
         RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap. BackR = hardwareMap.dcMotor.get("BackR");
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
 
 
-        RobotMap. FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
+        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
         RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+
+        RobotMap.Servo1.setDirection(Servo.Direction.FORWARD);
 
         RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
         RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);

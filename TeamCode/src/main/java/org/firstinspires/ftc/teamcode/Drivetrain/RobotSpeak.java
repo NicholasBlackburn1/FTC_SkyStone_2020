@@ -17,9 +17,10 @@ public class RobotSpeak extends OpMode {
         tts.speak("Hello world Time to DESTROY WORLD", TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    public void Speek(int mills,int nanos) throws InterruptedException {
+    public void Speek(int mills,int nanos ) throws InterruptedException {
         wait(mills,nanos);
         tts.speak("Big_BRAIN_TIME",TextToSpeech.QUEUE_FLUSH,null);
+
     }
     @Override
     public void init() {

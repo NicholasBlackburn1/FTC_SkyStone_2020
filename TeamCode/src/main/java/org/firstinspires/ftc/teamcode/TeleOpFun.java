@@ -6,11 +6,13 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotSpeak;
 
 @TeleOp(name = "TeleOP_Strafe",group = "TeleOp")
+
 public class TeleOpFun extends OpMode {
 
     DriveTrain driveTrain = new DriveTrain();
@@ -26,14 +28,18 @@ public class TeleOpFun extends OpMode {
 
     @Override
     public void loop() {
-
+        // regular drive control
         driveTrain.Motor_control(gamepad1);
+
+        // Enables you to strafe while button a on gampad1 is held down
+        driveTrain.Strafe_active(gamepad1,telemetry);
+
 
         if(RobotMap.button.getState() == true){
 
 
             try {
-                
+
                 // Makes robot say big brain time
                 robotSpeak.Speek(50,1);
 

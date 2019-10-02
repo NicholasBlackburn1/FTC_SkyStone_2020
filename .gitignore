@@ -2,3 +2,6 @@
 .class
 .lock
 
+*.lock
+*.ser
+*.ser
