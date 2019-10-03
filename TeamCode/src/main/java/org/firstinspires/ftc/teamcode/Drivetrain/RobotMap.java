@@ -31,6 +31,8 @@ public class RobotMap {
 
     // Sensor inputs
     public static BNO055IMU imu;
+
+    //digital inputs
     public static DigitalChannel button;
 
 
