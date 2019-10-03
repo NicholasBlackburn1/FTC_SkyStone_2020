@@ -19,7 +19,7 @@ public class TeleOpFun extends OpMode {
 
     DriveTrain driveTrain = new DriveTrain();
     RobotSpeak robotSpeak = new RobotSpeak();
-    Logger_ftc logger_ftc = new Logger_ftc();
+
 
 
     @Override
@@ -28,11 +28,8 @@ public class TeleOpFun extends OpMode {
 
         driveTrain.Hardwareinit(hardwareMap);
 
-        logger_ftc.Logger_init();
 
         robotSpeak.Speak_Init();
-
-        logger_ftc.Log.severe("TELEOP INIT");
     }
 
     @Override
@@ -41,9 +38,9 @@ public class TeleOpFun extends OpMode {
         driveTrain.Motor_control(gamepad1);
 
         // Enables you to strafe while button a on gampad1 is held down
-        driveTrain.Strafe_active(gamepad1,telemetry);
 
-        driveTrain.Arm(gamepad1);
+
+
 
         if(RobotMap.button.getState() == true){
 

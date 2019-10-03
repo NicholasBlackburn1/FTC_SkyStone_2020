@@ -5,3 +5,8 @@
 *.lock
 *.ser
 *.ser
+*.lock
+*.lock
+*.ser
+*.ser
+*.dex

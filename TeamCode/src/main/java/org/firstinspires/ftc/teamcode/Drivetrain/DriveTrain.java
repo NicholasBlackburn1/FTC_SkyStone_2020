@@ -28,8 +28,8 @@ import java.util.concurrent.ExecutionException;
 
 public  class DriveTrain extends OpMode{
 
-
-    Logger_ftc logger =  new Logger_ftc();
+    Pid_Controller pidController = new Pid_Controller();
+  
 
     public void Auto_Stop(){
 
@@ -39,13 +39,13 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        logger.Log.info("Auto stopped Successful");
-
+       
     }
+
     public void Arm(Gamepad gamepad1){
         RobotMap.Arm.setPower(gamepad1.right_trigger);
         RobotMap.Arm.setPower(-gamepad1.left_trigger);
-        logger.Log.info("ARM IS RUNNING");
+        
     }
 
     public void init_Auto(int Pos, Telemetry telemetry) {
@@ -57,7 +57,7 @@ public  class DriveTrain extends OpMode{
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         telemetry.addData("Status", "Resetting Encoders");    //
         telemetry.update();
-        logger.Log.severe("Auto Init Successful");
+        //.Log.severe("Auto Init Successful");
 
             RobotMap.BackR.setTargetPosition(Pos);
             RobotMap.BackL.setTargetPosition(Pos);
@@ -93,7 +93,7 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.BackL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Back Set of Wheels s
         RobotMap.BackR.setPower(gamepad1.left_stick_y + gamepad1.right_stick_x);
-        logger.Log.info("Motor running Successful");
+        //.Log.info("Motor running Successful");
 
     }
 
@@ -117,7 +117,7 @@ public  class DriveTrain extends OpMode{
             RobotMap.FrontR.setPower(FrontRightVal);
             RobotMap.BackL.setPower(BackLeftVal);
             RobotMap.BackR.setPower(BackRightVal);
-        logger.Log.severe("Strafe active");
+        //.Log.severe("Strafe active");
 
     }
 
@@ -127,7 +127,7 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        logger.Log.severe("Float mode active");
+        //.Log.severe("Float mode active");
 
 
     }
@@ -138,7 +138,7 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        logger.Log.severe("BRAke mode active ");
+        //.Log.severe("BRAke mode active ");
     }
 
     public void Strafe_active( Gamepad gamepad1,Telemetry telemetry){
@@ -148,7 +148,7 @@ public  class DriveTrain extends OpMode{
             Motor_Strafe_Control();
 
             telemetry.addData("Strafe", "Active");
-            logger.Log.severe("Strafe active");
+            //.Log.severe("Strafe active");
             telemetry.update();
         }
 
@@ -156,7 +156,7 @@ public  class DriveTrain extends OpMode{
 
 
     public void Hardwareinit(HardwareMap hardwareMap) {
-             logger.Log.severe("Hardware init'd");
+             //.Log.severe("Hardware init'd");
            RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
 
            RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
@@ -193,6 +193,9 @@ public  class DriveTrain extends OpMode{
 
 
 
+    }
+    public void PIDDRIVE(){
+       
     }
 
 
