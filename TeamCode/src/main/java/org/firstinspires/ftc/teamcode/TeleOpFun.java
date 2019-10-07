@@ -29,7 +29,7 @@ public class TeleOpFun extends OpMode {
         driveTrain.Hardwareinit(hardwareMap);
 
 
-        robotSpeak.Speak_Init();
+
     }
 
     @Override
@@ -38,24 +38,6 @@ public class TeleOpFun extends OpMode {
         driveTrain.Motor_control(gamepad1);
 
         // Enables you to strafe while button a on gampad1 is held down
-
-
-
-
-        if(RobotMap.button.getState() == true){
-
-
-            try {
-
-                // Makes robot say big brain time
-                robotSpeak.Speek(50,1);
-
-            } catch (InterruptedException e) {
-
-                e.printStackTrace();
-            }
-        }
-
 
     }
 }
