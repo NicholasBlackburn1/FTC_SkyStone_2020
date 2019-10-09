@@ -117,7 +117,8 @@ public  class DriveTrain extends OpMode{
             RobotMap.FrontR.setPower(FrontRightVal);
             RobotMap.BackL.setPower(BackLeftVal);
             RobotMap.BackR.setPower(BackRightVal);
-        //.Log.severe("Strafe active");
+        //
+
 
     }
 
