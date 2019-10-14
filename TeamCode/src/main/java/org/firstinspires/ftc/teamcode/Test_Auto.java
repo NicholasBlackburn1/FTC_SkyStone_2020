@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
+import org.firstinspires.ftc.teamcode.Drivetrain.*;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
 @Autonomous(name = "Nicks testauto", group = "Auto")
 public class Test_Auto extends OpMode {

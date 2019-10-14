@@ -37,7 +37,7 @@ public class ImuMapper extends OpMode {
 
     }
 
-    public void ImuData() {
+    public void ImuData(Telemetry telemetry) {
         // Get absolute orientation
         // Get acceleration due to force of gravity.
         angles = RobotMap.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
