@@ -18,6 +18,6 @@ public class IMU_TeleOP extends OpMode {
 
     @Override
     public void loop() {
-        imuMapper.ImuData();
+        imuMapper.ImuData(telemetry);
     }
 }
