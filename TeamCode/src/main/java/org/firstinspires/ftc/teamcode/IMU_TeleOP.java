@@ -13,7 +13,7 @@ public class IMU_TeleOP extends OpMode {
 
     @Override
     public void init() {
-
+        driveTrain.Hardwareinit(hardwareMap);
         imuMapper.Init();
 
     }
