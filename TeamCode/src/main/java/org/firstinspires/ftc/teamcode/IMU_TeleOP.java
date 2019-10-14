@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Drivetrain.*;
 
+@TeleOp(name = "IMU TES ",group = "Teleop")
 public class IMU_TeleOP extends OpMode {
 
     DriveTrain driveTrain = new DriveTrain();
