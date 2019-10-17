@@ -179,7 +179,7 @@ public  class DriveTrain extends OpMode{
            RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
 
 
-        RobotMap.Servo1.setDirection(Servo.Direction.FORWARD);
+        RobotMap.Vex_Extencson.setDirection(Servo.Direction.FORWARD);
 
         RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
         RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);
