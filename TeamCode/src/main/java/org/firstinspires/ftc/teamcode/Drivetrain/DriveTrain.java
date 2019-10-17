@@ -162,7 +162,7 @@ public  class DriveTrain extends OpMode{
 
            RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
 
-           RobotMap.Servo1 = hardwareMap.get(Servo.class,"Servo1");
+           RobotMap.Vex_Extencson = hardwareMap.get(Servo.class,"Vex_Extencson");
            // enbles imu to be programend in code
 
            RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
@@ -170,7 +170,9 @@ public  class DriveTrain extends OpMode{
 
            RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
            RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
-           RobotMap.Arm = hardwareMap.dcMotor.get("Arm");
+
+           // winch for sissor lift
+           RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
 
 
            RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels

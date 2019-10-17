@@ -23,10 +23,13 @@ public class RobotMap {
     public static DcMotor BackL;
     public static DcMotor FrontR;
     public static DcMotor FrontL;
-    public static DcMotor Arm;
+
+    // Wintch
+
+    public static DcMotor Winch;
 
     // Servo Motors
-    public static Servo Servo1;
+    public static Servo Vex_Extencson;
     public static Servo Servo2;
 
     // Sensor inputs

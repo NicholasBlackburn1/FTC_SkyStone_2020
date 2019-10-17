@@ -9,7 +9,10 @@ public class Skeltion_Code extends OpMode
 
     @Override
     public void init() {
-    drivetrain.Hardwareinit(hardwareMap);
+
+        // Inits Hardware for robot
+        drivetrain.Hardwareinit(hardwareMap);
+
 
     }
 
