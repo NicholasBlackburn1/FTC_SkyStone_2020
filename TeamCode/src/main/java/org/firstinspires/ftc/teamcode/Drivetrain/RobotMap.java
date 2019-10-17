@@ -24,7 +24,7 @@ public class RobotMap {
     public static DcMotor FrontR;
     public static DcMotor FrontL;
 
-    // Wintch
+    // Winch
 
     public static DcMotor Winch;
 
