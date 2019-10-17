@@ -42,11 +42,7 @@ public  class DriveTrain extends OpMode{
        
     }
 
-    public void Arm(Gamepad gamepad1){
-        RobotMap.Arm.setPower(gamepad1.right_trigger);
-        RobotMap.Arm.setPower(-gamepad1.left_trigger);
-        
-    }
+   
 
     public void init_Auto(int Pos, Telemetry telemetry) {
 
