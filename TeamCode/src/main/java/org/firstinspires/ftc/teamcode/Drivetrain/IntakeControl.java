@@ -6,7 +6,7 @@ public class IntakeControl extends OpMode {
 
 
     public void init() {
-
+    
     }
 
     public void loop() {

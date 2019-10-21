@@ -8,6 +8,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.LED;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
+import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 
@@ -34,7 +36,7 @@ public class RobotMap {
     public static BNO055IMU imu;
 
     //digital inputs
-    public static DigitalChannel BlockLimit;
+    public static DigitalChannel StoneLimit;
     
     // Imu Angles of Measurement
     public static Orientation angles;

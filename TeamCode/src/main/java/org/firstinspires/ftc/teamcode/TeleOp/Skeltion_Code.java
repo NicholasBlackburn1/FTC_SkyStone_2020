@@ -13,7 +13,7 @@ public class Skeltion_Code extends OpMode
 
     drivetrain.Hardwareinit(hardwareMap); //init hardware for robot
     
-    drivetrain.C
+    
 
     }
 
