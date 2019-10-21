@@ -29,7 +29,7 @@ public class Teleop_2020 extends OpMode
 
         intake_Control.Winch_Control(gamepad2); // Controls The scissor lift movement with the winch using Trigger buttons on gamepad2
 
-        intake_Control.Carriage_control(gamepad2); // Controls The Liner control for the  scissor lift carriage
+        intake_Control.Carriage_control(gamepad2); // Controls The Linear control for the  scissor lift carriage
 
         if(gamepad1.a = true){ // conditional statement to enable strafe on driver controller
 
