@@ -51,9 +51,9 @@ public class ImuMapper extends OpMode {
 
 
         // Display orientation info.
-        telemetry.addData("rot about Z", angles.firstAngle);
-        telemetry.addData("rot about Y", angles.secondAngle);
-        telemetry.addData("rot about X", angles.thirdAngle);
+        telemetry.addData("rot about Z", RobotMap.angles.firstAngle);
+        telemetry.addData("rot about Y", RobotMap.angles.secondAngle);
+        telemetry.addData("rot about X", RobotMap.angles.thirdAngle);
 
         telemetry.addData("speed", RobotMap.imu.getAcceleration());
         // updates to screen

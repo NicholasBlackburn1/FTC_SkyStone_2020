@@ -20,7 +20,7 @@ public class Auto_2020 extends OpMode {
     @Override
     public void loop() {
 
-        driveTrain.MotorPower(1);  //sets robot
+        driveTrain.MotorPower(1);  //sets robot motor power
 
     }
 }

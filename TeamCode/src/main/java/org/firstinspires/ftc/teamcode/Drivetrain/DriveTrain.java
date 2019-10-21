@@ -153,16 +153,12 @@ public class DriveTrain extends OpMode{
         RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
            
         // Defines  Liner extension control for Scissor lift
-        RobotMap.Vex_Extension = hardwareMap.get(Servo.class, "Scissor_Extend");
+        RobotMap.Vex_Extension = hardwareMap.get(Servo.class, "extend");
 
         // Defines Inertial measurement unit for Exact measurement of robot in space  
         RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
-        
-        // Defines The Limit switch for Dection of the stone in the scissor mechanism
-        RobotMap.StoneLimit= hardwareMap.get(DigitalChannel.class, "StoneLimit");
-           
-        // Sets Input Mode of the StoneLimit Switch to Input mode ss
-        RobotMap.StoneLimit.setMode(DigitalChannel.Mode.INPUT);
+
+       
 
         //  Sets Direction of Linier extension servo motor   
         RobotMap.Vex_Extension.setDirection(Servo.Direction.FORWARD);

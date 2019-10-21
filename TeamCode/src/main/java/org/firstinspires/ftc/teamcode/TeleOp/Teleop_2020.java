@@ -32,10 +32,10 @@ public class Teleop_2020 extends OpMode
 
         intake_Control.Carriage_control(gamepad2); // Controls The Liner control for the  scissor lift carriage
 
-        if(gamepad1.a = true){ // conditional statement to enable strafe on driver controller
+        while(gamepad1.a = true){ // conditional statement to enable strafe on driver controller
 
             drivetrain.Motor_Strafe_Control(gamepad1); // Enables us to strafe while the gamepad1 button a is presses
-
+            
         }
     }
 }
