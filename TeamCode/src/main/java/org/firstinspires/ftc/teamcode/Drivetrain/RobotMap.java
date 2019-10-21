@@ -26,7 +26,7 @@ public class RobotMap {
     public static DcMotor FrontR;
     public static DcMotor FrontL;
 
-    // Winch
+    // Scissor Lift Control 
     public static DcMotor Winch;
 
     // Servo Motors

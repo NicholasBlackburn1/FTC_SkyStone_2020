@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutionException;
  *
  */
 
-public  class DriveTrain extends OpMode{
+public class DriveTrain extends OpMode{
 
   
 
@@ -161,7 +161,6 @@ public  class DriveTrain extends OpMode{
         // Defines The Limit switch for Dection of the stone in the scissor mechanism
         RobotMap.StoneLimit= hardwareMap.get(DigitalChannel.class, "StoneLimit");
            
-        
         // Sets Input Mode of the StoneLimit Switch to Input mode ss
         RobotMap.StoneLimit.setMode(DigitalChannel.Mode.INPUT);
 
@@ -175,12 +174,18 @@ public  class DriveTrain extends OpMode{
         RobotMap.FrontL.setDirection(DcMotorSimple.Direction.REVERSE);
         RobotMap.BackR.setDirection(DcMotorSimple.Direction.FORWARD);
 
+         // Sets Drive Direction of Winch control motor
+        RobotMap.Winch.setDirection(DcMotorSimple.Direction.REVERSE);
+
         // Sets Zero Power Action for Drive Motor
         RobotMap.FrontR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // Set to Brake mode
         RobotMap.FrontL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+         // Sets Winch Zero Power Mode to Brake mode 
+        RobotMap.Winch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
 
