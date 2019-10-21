@@ -1,17 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Learning;
 
-import com.qualcomm.ftccommon.SoundPlayer;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DigitalChannel;
-import com.qualcomm.robotcore.hardware.Gamepad;
 
-import org.firstinspires.ftc.teamcode.Drivetrain.*;
-
-import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
+import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
 import org.firstinspires.ftc.teamcode.Drivetrain.RobotSpeak;
-
-import java.util.logging.Logger;
 
 @TeleOp(name = "TeleOP_Strafe",group = "TeleOp")
 

@@ -1,9 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Learning;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.Drivetrain.*;
+import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
+import org.firstinspires.ftc.teamcode.Drivetrain.SkyStoneFinder;
 
 @TeleOp(name = "Tensorflow skystone rec",group = "TeleOP")
 public class SkyStoneLocator extends OpMode {

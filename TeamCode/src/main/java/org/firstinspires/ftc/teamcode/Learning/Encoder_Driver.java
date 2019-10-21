@@ -1,12 +1,11 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Learning;
 
-import com.qualcomm.ftccommon.SoundPlayer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.teamcode.Drivetrain.*;
+import org.firstinspires.ftc.teamcode.Drivetrain.DriveTrain;
+import org.firstinspires.ftc.teamcode.Drivetrain.RobotMap;
 
 @Autonomous(name = "Sample_Encoder",group = "Auto")
 public class Encoder_Driver extends OpMode {
