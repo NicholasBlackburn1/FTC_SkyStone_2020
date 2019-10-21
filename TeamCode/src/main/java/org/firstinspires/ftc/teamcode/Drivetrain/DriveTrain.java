@@ -94,7 +94,7 @@ public class DriveTrain extends OpMode{
        
     }
 
-    public void Motor_Strafe_Control(){
+    public void Motor_Strafe_Control(Gamepad gamepad1){
 
             double FrontLeftVal =  gamepad1.left_stick_y - (gamepad1.left_stick_x)  + -gamepad1.right_stick_x;
             double FrontRightVal =  gamepad1.left_stick_y  + (gamepad1.left_stick_x) - -gamepad1.right_stick_x;

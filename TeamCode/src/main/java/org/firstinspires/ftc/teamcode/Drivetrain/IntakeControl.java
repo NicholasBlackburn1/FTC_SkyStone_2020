@@ -20,7 +20,7 @@ public  class IntakeControl extends OpMode {
     }
 
     // controls scissor Lift winch to move scissor up and down
-    public void Winch_Control(Gamepad gampad2){
+    public void Winch_Control(Gamepad gamepad2){
 
         // Extends scissor lift up with controlled right trigger
         RobotMap.Winch.setPower(gamepad2.right_trigger);
