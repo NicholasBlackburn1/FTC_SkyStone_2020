@@ -22,13 +22,12 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Init's and Sets each Drive train motors brake mode and control mode
+ * Init's and Sets each Drive train motors brake mode and control mode for each defined in the Robotmap class
  *
  */
 
 public  class DriveTrain extends OpMode{
 
-    Pid_Controller pidController = new Pid_Controller();
   
 
     public void Auto_Stop(){
@@ -48,12 +47,13 @@ public  class DriveTrain extends OpMode{
 
         RobotMap.BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         RobotMap.BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Back Drive Motors
-
+        
         RobotMap.FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);// Front Drive Motors
         RobotMap.FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        
         telemetry.addData("Status", "Resetting Encoders");    //
         telemetry.update();
-        //.Log.severe("Auto Init Successful");
+        
 
             RobotMap.BackR.setTargetPosition(Pos);
             RobotMap.BackL.setTargetPosition(Pos);
@@ -83,14 +83,15 @@ public  class DriveTrain extends OpMode{
     }
 
 
-    public void Motor_control(Gamepad gamepad1){
+    public void Motor_control(Gamepad gamepad1) {
+        
+        // Uses Driver controller to set the power of the Drivetrain motors
         RobotMap.FrontL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Front set of wheels
         RobotMap.FrontR.setPower(gamepad1.left_stick_y + gamepad1.right_stick_x);
 
         RobotMap.BackL.setPower(gamepad1.left_stick_y - gamepad1.right_stick_x); // Back Set of Wheels s
         RobotMap.BackR.setPower(gamepad1.left_stick_y + gamepad1.right_stick_x);
-        //.Log.info("Motor running Successful");
-
+       
     }
 
     public void Motor_Strafe_Control(){
@@ -113,73 +114,60 @@ public  class DriveTrain extends OpMode{
             RobotMap.FrontR.setPower(FrontRightVal);
             RobotMap.BackL.setPower(BackLeftVal);
             RobotMap.BackR.setPower(BackRightVal);
-        //
+        
 
 
     }
 
-    public  void Motor_Coast() {
+    public void Motor_Coast() {
+        // Sets Zero power mode for all the Drive train Motors -> Float mode 
         RobotMap.FrontR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         RobotMap.FrontL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        //.Log.severe("Float mode active");
+        
 
 
     }
 
-    public  void Motor_Break(){
+    public void Motor_Break() {
+        // Sets Zero power mode for all the Drive train Motors -> Break mode 
         RobotMap.FrontR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RobotMap.FrontL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RobotMap.BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        //.Log.severe("BRAke mode active ");
     }
-
-    public void Strafe_active( Gamepad gamepad1,Telemetry telemetry){
-
-        if(gamepad1.a = true){
-
-            Motor_Strafe_Control();
-
-            telemetry.addData("Strafe", "Active");
-            //.Log.severe("Strafe active");
-            telemetry.update();
-        }
-
-    }
-
 
     public void Hardwareinit(HardwareMap hardwareMap) {
-             //.Log.severe("Hardware init'd");
-           RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
+     
+        // Defines Robot Drive motors  and maps them to Robot Controllers hardware config
+        RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
+        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+           
+        RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
+        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+           
+        // Defines winch motor for scissor lift
+        RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
+           
+        // Defines  Liner extension control for Scissor lift
+        RobotMap.Vex_Extencson = hardwareMap.get(Servo.class, "Scissor_Extend");
 
-           RobotMap.button = hardwareMap.get(DigitalChannel.class,"button");
+        // Defines Inertial measurement unit for Exact measurement of robot in space  
+        RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
 
-           RobotMap.Vex_Extencson = hardwareMap.get(Servo.class,"Vex_Extencson");
-           // enbles imu to be programend in code
-
-           RobotMap.button.setMode(DigitalChannel.Mode.INPUT);
-           // Defines Robot Drive motors in Java
-
-           RobotMap.BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-           RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
-
-           // winch for sissor lift
-           RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
-
-
-           RobotMap.FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
-           RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
-
-
+           
+        
+        
+        //  Sets Direction of Linier extension servo motor   
         RobotMap.Vex_Extencson.setDirection(Servo.Direction.FORWARD);
 
+        // Sets Run direction Of the Drivetrain Motors
         RobotMap.FrontR.setDirection(DcMotorSimple.Direction.FORWARD);
         RobotMap.BackL.setDirection(DcMotorSimple.Direction.REVERSE);
-
+        
         RobotMap.FrontL.setDirection(DcMotorSimple.Direction.REVERSE);
         RobotMap.BackR.setDirection(DcMotorSimple.Direction.FORWARD);
 
@@ -193,11 +181,6 @@ public  class DriveTrain extends OpMode{
 
 
     }
-    public void PIDDRIVE(){
-
-    }
-
-
     @Override
     public void init() {
 
