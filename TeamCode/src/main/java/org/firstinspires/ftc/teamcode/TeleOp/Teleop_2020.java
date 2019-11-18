@@ -29,8 +29,9 @@ public class Teleop_2020 extends OpMode
         drivetrain.Motor_control(gamepad1); // controls regular driving for robot controls
 
 
-        drivetrain.Motor_Strafe_Control(gamepad1,telemetry); // Enables us to strafe while the gamepad1 button a is presses
+        drivetrain.Motor_Strafe_Control(gamepad1,telemetry); // Enables us to strafe while the gamepad1 while bumpers are presses
 
+        drivetrain.Hooking(gamepad1,telemetry); // Independetly controls robot hooks useing gamepad1 triggers
 
 
 

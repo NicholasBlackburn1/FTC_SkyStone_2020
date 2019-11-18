@@ -30,7 +30,8 @@ public class RobotMap {
     public static DcMotor Winch;
 
     // Servo Motors
-    public static Servo Vex_Extension;
+    public static Servo HookL;
+    public static Servo HookR;
 
     // Sensor inputs
     public static BNO055IMU imu;

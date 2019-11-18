@@ -25,6 +25,8 @@ import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.BackL;
 import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.BackR;
 import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.FrontL;
 import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.FrontR;
+import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.HookL;
+import static org.firstinspires.ftc.teamcode.Drivetrain.RobotMap.HookR;
 
 /**
  * Init's and Sets each Drive train motors brake mode and control mode for each defined in the Robotmap class
@@ -160,16 +162,17 @@ public class DriveTrain extends OpMode{
      
         // Defines Robot Drive motors  and maps them to Robot Controllers hardware config
         BackL = hardwareMap.dcMotor.get("BackL"); // Back set of wheels
-        RobotMap.BackR = hardwareMap.dcMotor.get("BackR");
+        BackR = hardwareMap.dcMotor.get("BackR");
            
         FrontL = hardwareMap.dcMotor.get("FrontL"); // Front set of wheels
-        RobotMap.FrontR = hardwareMap.dcMotor.get("FrontR");
+        FrontR = hardwareMap.dcMotor.get("FrontR");
+
+        // Hooks / claws for picking up  stones
+        HookL = hardwareMap.servo.get("HookL");
+        HookR = hardwareMap.servo.get("HookR");
            
         // Defines winch motor for scissor lift
-        //RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
-           
-        // Defines  Liner extension control for Scissor lift
-       // RobotMap.Vex_Extension = hardwareMap.get(Servo.class, "extend");
+        RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
 
         // Defines Inertial measurement unit for Exact measurement of robot in space  
         RobotMap.imu = hardwareMap.get(BNO055IMU.class, "imu");
@@ -196,12 +199,41 @@ public class DriveTrain extends OpMode{
         RobotMap.BackR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+
+
          // Sets Winch Zero Power Mode to Brake mode 
       //  RobotMap.Winch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
-
     }
+        public void Hooking(Gamepad gamepad1, Telemetry telemetry){
+
+        if(gamepad1.a == true){
+            telemetry.addData("Hooks","all lower true");
+
+            HookL.setPosition(gamepad1.right_trigger);
+            HookR.setPosition(gamepad1.right_trigger);
+
+        }else{
+
+            telemetry.addData("Hooks","all lower false");
+
+        }
+        if(gamepad1.x == true){
+            telemetry.addData("Hooks","independent true");
+
+            telemetry.addData("HookL",HookL.getPosition());
+            telemetry.addData("HookR",HookR.getPosition());
+
+            HookL.setPosition(gamepad1.left_trigger);
+            HookR.setPosition(gamepad1.right_trigger);
+
+
+        }else{
+
+            telemetry.addData("Hooks","independent false");
+        }
+
+        }
     @Override
     public void init() {
 
