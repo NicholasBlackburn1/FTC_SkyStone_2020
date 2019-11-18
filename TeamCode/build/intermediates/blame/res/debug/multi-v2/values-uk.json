@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nickthehacker/Documents/FTC_2020/SkyStone/FTC_SkyStone_2020/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
+            "outputFile": "/home/nickthehacker/Documents/FTC_SkyStone_2020/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
             "map": [
                 {
                     "source": "/home/nickthehacker/.gradle/caches/transforms-2/files-2.1/23d64699ede2d7f7e479a40e4a9e0527/res/values-uk/values-uk.xml",
