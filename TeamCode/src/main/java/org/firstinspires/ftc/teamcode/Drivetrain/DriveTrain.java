@@ -104,7 +104,6 @@ public class DriveTrain extends OpMode{
     public void Motor_Strafe_Control(Gamepad gamepad1, Telemetry telemetry) {
 
 
-
         if (gamepad1.right_bumper == true) {
 
             telemetry.addData("Strafing right","true");
@@ -114,6 +113,7 @@ public class DriveTrain extends OpMode{
             FrontR.setPower(-1);
             FrontL.setPower(1);
             Motor_Coast();
+
         } else {
             telemetry.addData("Strafing right","false");
         }
@@ -169,6 +169,9 @@ public class DriveTrain extends OpMode{
         // Hooks / claws for picking up  stones
         HookL = hardwareMap.servo.get("HookL");
         HookR = hardwareMap.servo.get("HookR");
+
+        HookL.setDirection(Servo.Direction.REVERSE);
+        HookL.setDirection(Servo.Direction.FORWARD);
            
         // Defines winch motor for scissor lift
         RobotMap.Winch = hardwareMap.dcMotor.get("Winch");
@@ -205,7 +208,7 @@ public class DriveTrain extends OpMode{
         if(gamepad1.a == true){
             telemetry.addData("Hooks","all lower true");
 
-            HookL.setPosition(-gamepad1.right_trigger);
+            HookL.setPosition(gamepad1.right_trigger);
             HookR.setPosition(gamepad1.right_trigger);
 
         }else{
@@ -219,7 +222,7 @@ public class DriveTrain extends OpMode{
             telemetry.addData("HookL",HookL.getPosition());
             telemetry.addData("HookR",HookR.getPosition());
 
-            HookL.setPosition(-gamepad1.left_trigger);
+            HookL.setPosition(gamepad1.left_trigger);
             HookR.setPosition(gamepad1.right_trigger);
 
 
