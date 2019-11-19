@@ -200,17 +200,13 @@ public class DriveTrain extends OpMode{
         BackL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
-
-         // Sets Winch Zero Power Mode to Brake mode 
-      //  RobotMap.Winch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
     }
         public void Hooking(Gamepad gamepad1, Telemetry telemetry){
 
         if(gamepad1.a == true){
             telemetry.addData("Hooks","all lower true");
 
-            HookL.setPosition(gamepad1.right_trigger);
+            HookL.setPosition(-gamepad1.right_trigger);
             HookR.setPosition(gamepad1.right_trigger);
 
         }else{
@@ -224,7 +220,7 @@ public class DriveTrain extends OpMode{
             telemetry.addData("HookL",HookL.getPosition());
             telemetry.addData("HookR",HookR.getPosition());
 
-            HookL.setPosition(gamepad1.left_trigger);
+            HookL.setPosition(-gamepad1.left_trigger);
             HookR.setPosition(gamepad1.right_trigger);
 
 

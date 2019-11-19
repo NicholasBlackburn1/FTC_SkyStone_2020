@@ -33,7 +33,7 @@ public class Teleop_2020 extends OpMode
 
         drivetrain.Hooking(gamepad1,telemetry); // Independetly controls robot hooks useing gamepad1 triggers
 
-
+        intake_Control.Winch_Control(gamepad2); // controls robot winch action
 
     }
 }

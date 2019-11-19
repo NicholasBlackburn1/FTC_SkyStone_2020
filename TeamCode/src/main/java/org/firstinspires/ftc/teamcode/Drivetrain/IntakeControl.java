@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Drivetrain;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.robot.Robot;
@@ -22,6 +23,8 @@ public  class IntakeControl extends OpMode {
     // controls scissor Lift winch to move scissor up and down
     public void Winch_Control(Gamepad gamepad2){
 
+        RobotMap.Winch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         // Extends scissor lift up with controlled right trigger
         RobotMap.Winch.setPower(gamepad2.right_trigger);
 
@@ -32,7 +35,7 @@ public  class IntakeControl extends OpMode {
 
     // Controls Liner Motion on Carriage to grab / Place Stones
     public void Carriage_control(Gamepad gamepad2){
-
+/*
         // sets Vex cr servo pos
         if(gamepad2.a = true){
             // sets servo to pos 225
@@ -41,7 +44,7 @@ public  class IntakeControl extends OpMode {
         else{
             RobotMap.Vex_Extension.setPosition(0);
         }
-
+    */
 
     }
 }
