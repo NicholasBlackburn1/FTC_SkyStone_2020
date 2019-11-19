@@ -105,7 +105,6 @@ public class DriveTrain extends OpMode{
 
 
 
-
         if (gamepad1.right_bumper == true) {
 
             telemetry.addData("Strafing right","true");
