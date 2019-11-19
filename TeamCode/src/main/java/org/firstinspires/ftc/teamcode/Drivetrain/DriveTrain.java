@@ -214,7 +214,7 @@ public class DriveTrain extends OpMode{
             telemetry.addData("Hooks","all lower false");
 
         }
-        if(gamepad1.x == true){
+        if(gamepad1.a== false){
             telemetry.addData("Hooks","independent true");
 
             telemetry.addData("HookL",HookL.getPosition());
